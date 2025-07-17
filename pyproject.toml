@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uart2mqtt"
+version = "0.1.0"
+description = "Shares all the serial ports on a system to an mqtt broker"
+readme = "README.rst"
+authors = [
+  {name = "Mark Featherston", email = "mark@embeddedTS.com"}
+]
+maintainers = [
+  {name = "Mark Featherston", email = "mark@embeddedTS.com"}
+]
+classifiers = [
+
+]
+license = {text = "MIT license"}
+dependencies = [
+  "paho-mqtt",
+  "pyserial",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy"
+]
+
+[project.urls]
+homepage = "https://github.com/embeddedts/uart2mqtt"
+bugs = "https://github.com/embeddedts/uart2mqtt/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+[project.scripts]
+uart2mqtt = "uart2mqtt.uart2mqtt:main"
+
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[tool.ruff]
+line-length = 120

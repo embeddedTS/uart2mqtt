@@ -1,0 +1,13 @@
+[Unit]
+Description=UART to MQTT Bridge
+After=network.target
+
+[Service]
+ExecStart=uart2mqtt
+Restart=always
+User=your_user
+Group=your_group
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
