@@ -1,12 +1,11 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "uart2mqtt"
-version = "0.1.0"
 description = "Shares all the serial ports on a system to an mqtt broker"
-readme = "README.rst"
+readme = "README.md"
 authors = [
   {name = "Mark Featherston", email = "mark@embeddedTS.com"}
 ]
@@ -21,6 +20,9 @@ dependencies = [
   "paho-mqtt",
   "pyserial",
 ]
+
+[tool.setuptools_scm]
+version_scheme = "guess-next-dev"
 
 [project.optional-dependencies]
 dev = [
